@@ -50,7 +50,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["multer", "npm:1.4.4"],
             ["node-config", "npm:0.0.2"],
             ["pinst", "npm:2.1.6"],
-            ["prettier", "npm:2.5.1"],
             ["pretty-quick", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.3"],
             ["reflect-metadata", "npm:0.1.13"],
             ["routing-controllers", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:0.9.0"],
@@ -2599,15 +2598,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["prettier", [
-        ["npm:2.5.1", {
-          "packageLocation": "./.yarn/cache/prettier-npm-2.5.1-58b195b509-21b9408476.zip/node_modules/prettier/",
-          "packageDependencies": [
-            ["prettier", "npm:2.5.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["pretty-bytes", [
         ["npm:5.6.0", {
           "packageLocation": "./.yarn/cache/pretty-bytes-npm-5.6.0-0061079c9f-9c082500d1.zip/node_modules/pretty-bytes/",
@@ -2636,7 +2626,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ignore", "npm:5.2.0"],
             ["mri", "npm:1.2.0"],
             ["multimatch", "npm:4.0.0"],
-            ["prettier", "npm:2.5.1"]
+            ["prettier", null]
           ],
           "packagePeers": [
             "@types/prettier",
@@ -2913,7 +2903,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["multer", "npm:1.4.4"],
             ["node-config", "npm:0.0.2"],
             ["pinst", "npm:2.1.6"],
-            ["prettier", "npm:2.5.1"],
             ["pretty-quick", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.3"],
             ["reflect-metadata", "npm:0.1.13"],
             ["routing-controllers", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:0.9.0"],

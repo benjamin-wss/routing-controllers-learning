@@ -2,6 +2,10 @@ import { Controller, Get, HttpCode, Res } from "routing-controllers";
 import { Response } from "express";
 import "reflect-metadata";
 
+interface IHeartBeatResponse {
+  message: string;
+}
+
 @Controller("/")
 export default class HomeController {
   @Get("/")
