@@ -41,4 +41,10 @@ export default class HomeController {
 
     return response.json(payload);
   }
+
+  @Get("/error-testing")
+  ErrorTester() {
+    const error = new Error("Some Shit");
+    throw error;
+  }
 }

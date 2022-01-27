@@ -24,3 +24,7 @@ Corepack isn't included with Node.js in versions before the 16.10; to address th
 npm i -g corepack
 ```
 
+## Resources
+
+1. https://webdevetc.com/blog/guide-to-routing-controllers/#returning-json-from-your-controller
+2. https://developer.okta.com/blog/2018/11/15/node-express-typescript

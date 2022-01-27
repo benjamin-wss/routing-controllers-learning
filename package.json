@@ -23,6 +23,7 @@
     "@types/multer": "~1.4.7",
     "@types/node": "16",
     "@yarnpkg/sdks": "~2.6.0-rc.4",
+    "env-cmd": "~10.1.0",
     "husky": "~7.0.0",
     "node-config": "~0.0.2",
     "pinst": "~2.0.0",
@@ -32,6 +33,7 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/server.js",
+    "start:devl": "env-cmd -e devl npm run start",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"

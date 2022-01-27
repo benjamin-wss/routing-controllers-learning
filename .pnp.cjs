@@ -44,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-parser", "npm:1.19.1"],
             ["class-transformer", "npm:0.5.1"],
             ["class-validator", "npm:0.13.2"],
+            ["env-cmd", "npm:10.1.0"],
             ["express", "npm:4.17.2"],
             ["glob", "npm:7.2.0"],
             ["husky", "npm:7.0.4"],
@@ -1063,6 +1064,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["commander", [
+        ["npm:4.1.1", {
+          "packageLocation": "./.yarn/cache/commander-npm-4.1.1-22a0fe921b-d7b9913ff9.zip/node_modules/commander/",
+          "packageDependencies": [
+            ["commander", "npm:4.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["comment-json", [
         ["npm:2.4.2", {
           "packageLocation": "./.yarn/cache/comment-json-npm-2.4.2-ad40caa02b-1e52aa6ddc.zip/node_modules/comment-json/",
@@ -1430,6 +1440,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["end-of-stream", "npm:1.4.4"],
             ["once", "npm:1.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["env-cmd", [
+        ["npm:10.1.0", {
+          "packageLocation": "./.yarn/cache/env-cmd-npm-10.1.0-85470635d6-efef550742.zip/node_modules/env-cmd/",
+          "packageDependencies": [
+            ["env-cmd", "npm:10.1.0"],
+            ["commander", "npm:4.1.1"],
+            ["cross-spawn", "npm:7.0.3"]
           ],
           "linkType": "HARD",
         }]
@@ -3477,6 +3498,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-parser", "npm:1.19.1"],
             ["class-transformer", "npm:0.5.1"],
             ["class-validator", "npm:0.13.2"],
+            ["env-cmd", "npm:10.1.0"],
             ["express", "npm:4.17.2"],
             ["glob", "npm:7.2.0"],
             ["husky", "npm:7.0.4"],

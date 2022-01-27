@@ -10,4 +10,6 @@
 #/.pnp.*
 
 
+# Application files to ignore
 /dist
+.env-cmdrc.js
