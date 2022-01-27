@@ -53,6 +53,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-quick", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.3"],
             ["reflect-metadata", "npm:0.1.13"],
             ["routing-controllers", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:0.9.0"],
+            ["routing-controllers-openapi", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.0"],
+            ["swagger-ui-express", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:4.3.0"],
             ["ts-node", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:10.4.0"],
             ["tsconfig-paths", "npm:3.12.0"],
             ["tslib", "npm:2.3.1"],
@@ -2047,6 +2049,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["lodash.capitalize", [
+        ["npm:4.2.1", {
+          "packageLocation": "./.yarn/cache/lodash.capitalize-npm-4.2.1-fe742c2310-d9195f31d4.zip/node_modules/lodash.capitalize/",
+          "packageDependencies": [
+            ["lodash.capitalize", "npm:4.2.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["lodash.merge", [
+        ["npm:4.6.2", {
+          "packageLocation": "./.yarn/cache/lodash.merge-npm-4.6.2-77cb4416bf-ad580b4bdb.zip/node_modules/lodash.merge/",
+          "packageDependencies": [
+            ["lodash.merge", "npm:4.6.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["lodash.startcase", [
+        ["npm:4.4.0", {
+          "packageLocation": "./.yarn/cache/lodash.startcase-npm-4.4.0-637aa8cc15-c03a4a784a.zip/node_modules/lodash.startcase/",
+          "packageDependencies": [
+            ["lodash.startcase", "npm:4.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["lowercase-keys", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/lowercase-keys-npm-2.0.0-1876065a32-24d7ebd56c.zip/node_modules/lowercase-keys/",
@@ -2470,6 +2499,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["openapi3-ts", [
+        ["npm:2.0.1", {
+          "packageLocation": "./.yarn/cache/openapi3-ts-npm-2.0.1-aeacc4c663-11114b4436.zip/node_modules/openapi3-ts/",
+          "packageDependencies": [
+            ["openapi3-ts", "npm:2.0.1"],
+            ["yaml", "npm:1.10.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["p-cancelable", [
         ["npm:2.1.1", {
           "packageLocation": "./.yarn/cache/p-cancelable-npm-2.1.1-9388305f02-3dba12b4fb.zip/node_modules/p-cancelable/",
@@ -2557,6 +2596,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["path-to-regexp", "npm:1.8.0"],
             ["isarray", "npm:0.0.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:2.4.0", {
+          "packageLocation": "./.yarn/cache/path-to-regexp-npm-2.4.0-ce02fd84d9-581175bf29.zip/node_modules/path-to-regexp/",
+          "packageDependencies": [
+            ["path-to-regexp", "npm:2.4.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2906,12 +2952,43 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-quick", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.3"],
             ["reflect-metadata", "npm:0.1.13"],
             ["routing-controllers", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:0.9.0"],
+            ["routing-controllers-openapi", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.0"],
+            ["swagger-ui-express", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:4.3.0"],
             ["ts-node", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:10.4.0"],
             ["tsconfig-paths", "npm:3.12.0"],
             ["tslib", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "linkType": "SOFT",
+        }]
+      ]],
+      ["routing-controllers-openapi", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/routing-controllers-openapi-npm-3.1.0-bbe6c93ffc-4c237651ae.zip/node_modules/routing-controllers-openapi/",
+          "packageDependencies": [
+            ["routing-controllers-openapi", "npm:3.1.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.0", {
+          "packageLocation": "./.yarn/__virtual__/routing-controllers-openapi-virtual-daf10f6585/0/cache/routing-controllers-openapi-npm-3.1.0-bbe6c93ffc-4c237651ae.zip/node_modules/routing-controllers-openapi/",
+          "packageDependencies": [
+            ["routing-controllers-openapi", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:3.1.0"],
+            ["@types/routing-controllers", null],
+            ["lodash.capitalize", "npm:4.2.1"],
+            ["lodash.merge", "npm:4.6.2"],
+            ["lodash.startcase", "npm:4.4.0"],
+            ["openapi3-ts", "npm:2.0.1"],
+            ["path-to-regexp", "npm:2.4.0"],
+            ["reflect-metadata", "npm:0.1.13"],
+            ["routing-controllers", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:0.9.0"],
+            ["tslib", "npm:2.3.1"]
+          ],
+          "packagePeers": [
+            "@types/routing-controllers",
+            "routing-controllers"
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["run-parallel", [
@@ -3161,6 +3238,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["supports-color", "npm:7.2.0"],
             ["has-flag", "npm:4.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["swagger-ui-dist", [
+        ["npm:4.3.0", {
+          "packageLocation": "./.yarn/cache/swagger-ui-dist-npm-4.3.0-86df930480-280945fab3.zip/node_modules/swagger-ui-dist/",
+          "packageDependencies": [
+            ["swagger-ui-dist", "npm:4.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["swagger-ui-express", [
+        ["npm:4.3.0", {
+          "packageLocation": "./.yarn/cache/swagger-ui-express-npm-4.3.0-bc0c30982a-8d2e1e5389.zip/node_modules/swagger-ui-express/",
+          "packageDependencies": [
+            ["swagger-ui-express", "npm:4.3.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:4.3.0", {
+          "packageLocation": "./.yarn/__virtual__/swagger-ui-express-virtual-4707110449/0/cache/swagger-ui-express-npm-4.3.0-bc0c30982a-8d2e1e5389.zip/node_modules/swagger-ui-express/",
+          "packageDependencies": [
+            ["swagger-ui-express", "virtual:bdafd52996ae975ecc3935a6f2c11d62ccdb15d3bb7fdf754b2c4984f0fc5b660917c6bcc98c64521ad125b7c51162b2a68b525192440850522be1f08f22a412#npm:4.3.0"],
+            ["@types/express", "npm:4.17.13"],
+            ["express", "npm:4.17.2"],
+            ["swagger-ui-dist", "npm:4.3.0"]
+          ],
+          "packagePeers": [
+            "@types/express",
+            "express"
           ],
           "linkType": "HARD",
         }]
@@ -3453,6 +3562,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yallist-npm-4.0.0-b493d9e907-343617202a.zip/node_modules/yallist/",
           "packageDependencies": [
             ["yallist", "npm:4.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["yaml", [
+        ["npm:1.10.2", {
+          "packageLocation": "./.yarn/cache/yaml-npm-1.10.2-0e780aebdf-ce4ada136e.zip/node_modules/yaml/",
+          "packageDependencies": [
+            ["yaml", "npm:1.10.2"]
           ],
           "linkType": "HARD",
         }]
