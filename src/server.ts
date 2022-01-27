@@ -1,13 +1,15 @@
 import {
   createExpressServer,
   RoutingControllersOptions,
+  getMetadataArgsStorage,
 } from "routing-controllers";
 // import glob from "glob";
-import { getMetadataArgsStorage } from "routing-controllers";
+import { Application as ExpressServer } from "express";
 import { routingControllersToSpec } from "routing-controllers-openapi";
 import * as swaggerUiExpress from "swagger-ui-express";
 
 import config, { ServerEnvironments } from "./config";
+import * as MiddleWares from "./middlewares";
 
 const PORT = 4000;
 
@@ -21,12 +23,16 @@ console.info(`Starting server on http://localhost:${PORT}`);
 //   routes.push(controller);
 // });
 
+const middlewareImports = Object.values(MiddleWares);
+
 const routingControllerOptions: RoutingControllersOptions = {
   //   controllers: routes,
   controllers: [`${config.rootPath}/controllers/*.js`],
+  middlewares: [...middlewareImports],
+  classTransformer: true,
 };
 
-const app = createExpressServer(routingControllerOptions);
+const app = createExpressServer(routingControllerOptions) as ExpressServer;
 
 if (config.environment !== ServerEnvironments.PRODUCTION) {
   const storage = getMetadataArgsStorage();
