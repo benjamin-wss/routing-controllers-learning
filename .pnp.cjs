@@ -48,6 +48,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.17.2"],
             ["glob", "npm:7.2.0"],
             ["husky", "npm:7.0.4"],
+            ["moment", "npm:2.29.1"],
+            ["moment-timezone", "npm:0.5.34"],
             ["multer", "npm:1.4.4"],
             ["node-config", "npm:0.0.2"],
             ["pinst", "npm:2.0.0"],
@@ -2678,6 +2680,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["moment", [
+        ["npm:2.29.1", {
+          "packageLocation": "./.yarn/cache/moment-npm-2.29.1-787d9fdafd-1e14d5f422.zip/node_modules/moment/",
+          "packageDependencies": [
+            ["moment", "npm:2.29.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["moment-timezone", [
+        ["npm:0.5.34", {
+          "packageLocation": "./.yarn/cache/moment-timezone-npm-0.5.34-e4fe2d01f6-12a1d3d52e.zip/node_modules/moment-timezone/",
+          "packageDependencies": [
+            ["moment-timezone", "npm:0.5.34"],
+            ["moment", "npm:2.29.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["mri", [
         ["npm:1.2.0", {
           "packageLocation": "./.yarn/cache/mri-npm-1.2.0-8ecee0357d-83f515abbc.zip/node_modules/mri/",
@@ -3502,6 +3523,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.17.2"],
             ["glob", "npm:7.2.0"],
             ["husky", "npm:7.0.4"],
+            ["moment", "npm:2.29.1"],
+            ["moment-timezone", "npm:0.5.34"],
             ["multer", "npm:1.4.4"],
             ["node-config", "npm:0.0.2"],
             ["pinst", "npm:2.0.0"],

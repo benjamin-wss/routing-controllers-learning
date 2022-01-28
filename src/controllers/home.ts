@@ -1,10 +1,4 @@
-import {
-  Controller,
-  Get,
-  HttpCode,
-  JsonController,
-  Res,
-} from "routing-controllers";
+import { Get, HttpCode, JsonController, Res } from "routing-controllers";
 import { Response } from "express";
 import { OpenAPI, ResponseSchema } from "routing-controllers-openapi";
 import "reflect-metadata";

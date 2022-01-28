@@ -53,6 +53,19 @@ if (config.environment !== ServerEnvironments.PRODUCTION) {
             },
           },
         },
+        ConvertTimeRequest: {
+          type: "object",
+          properties: {
+            isoDateTimeString: {
+              type: "string",
+              description: "ISO UTC date string.",
+            },
+            timeZone: {
+              type: "string",
+              description: "Moment TZ time zone string.",
+            },
+          },
+        },
       },
     },
   });
