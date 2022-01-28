@@ -27,7 +27,7 @@ const middlewareImports = Object.values(MiddleWares);
 
 const routingControllerOptions: RoutingControllersOptions = {
   //   controllers: routes,
-  controllers: [`${config.rootPath}/controllers/*.js`],
+  controllers: [`${config.rootPath}/controllers/*.controller.js`],
   middlewares: [...middlewareImports],
   classTransformer: true,
 };
