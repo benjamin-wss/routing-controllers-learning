@@ -76,39 +76,4 @@ if (config.environment !== ServerEnvironments.PRODUCTION) {
   app.use("/explorer", swaggerUiExpress.serve, swaggerUiExpress.setup(spec));
 }
 
-// general error handing setup
-// app.use((error, req, res, next) => {
-//   const status = error.httpErrorCode || 500;
-//   res.status(status);
-
-//   if (config.environment !== ServerEnvironments.PRODUCTION) {
-//     // ensures error object gets all details
-//     const jsonString = JSON.stringify(error, (key, value) => {
-//       if (value instanceof Error) {
-//         // eslint-disable-next-line no-shadow
-//         const error = {};
-
-//         // eslint-disable-next-line no-shadow
-//         Object.getOwnPropertyNames(value).forEach((key) => {
-//           error[key] = value[key];
-//         });
-
-//         return error;
-//       }
-
-//       return value;
-//     });
-//     const jsonObject = JSON.parse(jsonString);
-//     res.send({
-//       ...jsonObject,
-//     });
-//     return;
-//   }
-
-//   res.json({
-//     status,
-//     message: error.message,
-//   });
-// });
-
 app.listen(PORT);
