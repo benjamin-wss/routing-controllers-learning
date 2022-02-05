@@ -9,7 +9,7 @@ import { routingControllersToSpec } from "routing-controllers-openapi";
 import * as swaggerUiExpress from "swagger-ui-express";
 
 import config, { ServerEnvironments } from "./config";
-import * as MiddleWares from "./middlewares";
+import * as MiddleWares from "./global-middlewares";
 
 const PORT = 4000;
 

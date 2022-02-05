@@ -1,10 +1,17 @@
-import { Get, HttpCode, JsonController, Res } from "routing-controllers";
+import {
+  Get,
+  HttpCode,
+  JsonController,
+  Res,
+  UseBefore,
+} from "routing-controllers";
 import { Response } from "express";
 import { OpenAPI, ResponseSchema } from "routing-controllers-openapi";
 import "reflect-metadata";
 import { IsString } from "class-validator";
 
 import * as Dto from "../dto";
+import * as Middlewares from "../middlewares";
 
 interface IHeartBeatResponse {
   message: string;
@@ -52,5 +59,26 @@ export default class HomeController {
     });
 
     throw error;
+  }
+
+  @OpenAPI({
+    description: "Simple test to middlewares",
+    parameters: [
+      {
+        in: "header",
+        name: "user-type",
+        schema: {
+          type: "string",
+        },
+        required: true,
+      },
+    ],
+  })
+  @Get("/auth-middleware-test")
+  @UseBefore(Middlewares.Pre, Middlewares.Auth)
+  AuthMiddleWareTester() {
+    return {
+      messge: "wheeee",
+    };
   }
 }
