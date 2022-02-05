@@ -34,6 +34,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "clean": "npx rimraf dist",
     "start": "npm run build && node dist/server.js",
     "start:devl": "env-cmd -e devl npm run start",
     "postinstall": "husky install",

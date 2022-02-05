@@ -32,7 +32,7 @@ export default class TimeCoversion {
     },
   })
   @Post("")
-  async ConvertTime(@Body() payload: ConvertTimeRequest) {
+  async ConvertTime(@Body({ required: true }) payload: ConvertTimeRequest) {
     const currentMoment = moment(payload.isoDateTimeString, moment.ISO_8601);
     const covertedMoment = currentMoment.tz(payload.timeZone);
 

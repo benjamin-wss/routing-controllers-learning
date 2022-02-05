@@ -13,7 +13,7 @@ class HeartBeatResponse {
   public message: string;
 }
 
-@JsonController("/")
+@JsonController("")
 export default class HomeController {
   @OpenAPI({
     description: "A simple endpoint to check if the API server is running.",
@@ -24,7 +24,7 @@ export default class HomeController {
     // contentType: "application/json",
     isArray: false,
   })
-  @Get("")
+  @Get("/")
   @HttpCode(200)
   Index(@Res() response: Response): Response<IHeartBeatResponse> {
     // const payload: IHeartBeatResponse = {

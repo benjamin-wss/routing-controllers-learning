@@ -2,7 +2,7 @@ import { Middleware, ExpressMiddlewareInterface } from "routing-controllers";
 import { Request, Response, NextFunction } from "express";
 
 @Middleware({ type: "before" })
-export class LoggingMiddleware implements ExpressMiddlewareInterface {
+export class WebRequestLogger implements ExpressMiddlewareInterface {
   use(
     request: Request,
     response: Response,
