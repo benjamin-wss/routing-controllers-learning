@@ -15,6 +15,22 @@ export class CustomErrorHandler implements ExpressErrorMiddlewareInterface {
     response: Response,
     next: (err: any) => NextFunction
   ) {
+    const errorJsonString = JSON.stringify(error, (key, value) => {
+      if (value instanceof Error) {
+        const obj = {};
+
+        Object.getOwnPropertyNames(value).forEach((key) => {
+          obj[key] = value[key];
+        });
+
+        return obj;
+      }
+
+      return value;
+    });
+
+    console.error("Error encountered", errorJsonString);
+
     let httpStatus = 500;
 
     if (error instanceof Dto.ApplicationError) {
@@ -34,23 +50,9 @@ export class CustomErrorHandler implements ExpressErrorMiddlewareInterface {
       return next(null);
     }
 
-    const jsonString = JSON.stringify(error, (key, value) => {
-      if (value instanceof Error) {
-        const obj = {};
-
-        Object.getOwnPropertyNames(value).forEach((key) => {
-          obj[key] = value[key];
-        });
-
-        return obj;
-      }
-
-      return value;
-    });
-
-    const jsonObject = JSON.parse(jsonString);
+    const errorJsonObject = JSON.parse(errorJsonString);
     response.send({
-      ...jsonObject,
+      ...errorJsonObject,
     });
     return next(null);
   }
