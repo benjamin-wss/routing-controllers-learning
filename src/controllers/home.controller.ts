@@ -4,6 +4,8 @@ import { OpenAPI, ResponseSchema } from "routing-controllers-openapi";
 import "reflect-metadata";
 import { IsString } from "class-validator";
 
+import * as Dto from "../dto";
+
 interface IHeartBeatResponse {
   message: string;
 }
@@ -36,9 +38,19 @@ export default class HomeController {
     return response.json(payload);
   }
 
-  @Get("/error-testing")
+  @Get("/unexpected-error-testing")
   ErrorTester() {
-    const error = new Error("Some Shit");
+    const error = new Error("unexpected error happening mou.");
+    throw error;
+  }
+
+  @Get("/expected-error-testing")
+  ExpectedErrorTester() {
+    const error = new Dto.ApplicationError({
+      message: "Expected error mou.",
+      httpCode: 505,
+    });
+
     throw error;
   }
 }
