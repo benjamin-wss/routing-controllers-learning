@@ -1,20 +1,7 @@
-import { IsString, IsDateString } from "class-validator";
 import { JsonController, Post, Body } from "routing-controllers";
 import { OpenAPI } from "routing-controllers-openapi";
-import moment from "moment-timezone";
 
-interface IConvertTimeRequest {
-  isoDateTimeString: string;
-  timeZone: string;
-}
-
-class ConvertTimeRequest implements IConvertTimeRequest {
-  @IsDateString()
-  public isoDateTimeString: string;
-
-  @IsString()
-  timeZone: string;
-}
+import * as Services from "../services";
 
 @JsonController("/api/date-time-conversion")
 export default class TimeCoversion {
@@ -32,13 +19,12 @@ export default class TimeCoversion {
     },
   })
   @Post("")
-  async ConvertTime(@Body({ required: true }) payload: ConvertTimeRequest) {
-    const currentMoment = moment(payload.isoDateTimeString, moment.ISO_8601);
-    const covertedMoment = currentMoment.tz(payload.timeZone);
-
-    return {
-      ...payload,
-      convertedTime: covertedMoment.format(),
-    };
+  async ConvertTime(
+    @Body({ required: true })
+    payload: Services.TimeConversion.ConvertTimeRequest
+  ) {
+    return new Services.TimeConversion.TimeConversionService().ConvertUtcStringToTimeZone(
+      payload
+    );
   }
 }
