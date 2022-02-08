@@ -8,6 +8,8 @@ This will be using Yarn as that seems to account for the possibility of packages
 
 Read more @ https://yarnpkg.com/getting-started/install
 
+Note: Had to fallback to `node_modules` based Yarn due to issues with Prisma ORM build process with Yarn Zero Install / Plug N Play approach. 
+
 ### Node.js >=16.10
 
 Corepack is included by default with all Node.js installs, but is currently opt-in. To enable it, run the following command:
