@@ -44,6 +44,7 @@
     "prisma:db-update": "env-cmd -e devl prisma db push",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo wtf?"
   }
 }
