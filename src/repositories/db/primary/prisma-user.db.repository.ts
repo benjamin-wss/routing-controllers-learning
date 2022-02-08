@@ -21,6 +21,21 @@ export class PrismaUserDbRepository implements IUser {
       newUser.password,
       newUser.isAdmin,
       newUser.emailConfirmed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     );
   }
   findAll(pageIndex: Number, pageSize: Number): Promise<SystemUser[]> {
