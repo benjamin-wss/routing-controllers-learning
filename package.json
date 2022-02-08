@@ -47,5 +47,10 @@
     "postpublish": "pinst --enable",
     "prepare": "husky install",
     "test": "echo wtf?"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

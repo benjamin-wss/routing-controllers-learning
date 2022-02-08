@@ -35,7 +35,6 @@ export class PrismaUserDbRepository implements IUser {
 
 
 
-      
     );
   }
   findAll(pageIndex: Number, pageSize: Number): Promise<SystemUser[]> {
