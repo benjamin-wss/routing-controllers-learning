@@ -1,7 +1,10 @@
 import * as Dto from "../../../dto";
 
 export interface IPostRepository {
-  create(post: Dto.IPostMutable): Promise<Dto.IPost>;
+  create(
+    post: Dto.IPostMutable,
+    includeAuthorData: boolean
+  ): Promise<Dto.IPost>;
   getByAUthorId(
     pageIndex: Number,
     pageSize: Number,

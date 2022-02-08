@@ -8,7 +8,7 @@ import "reflect-metadata";
 import { Application as ExpressServer } from "express";
 import { routingControllersToSpec } from "routing-controllers-openapi";
 import * as swaggerUiExpress from "swagger-ui-express";
-import compression from 'compression';
+import compression from "compression";
 
 import config, { ServerEnvironments } from "./config";
 import * as MiddleWares from "./global-middlewares";
@@ -93,6 +93,20 @@ if (config.environment !== ServerEnvironments.PRODUCTION) {
             },
           },
         },
+        PostMutable: {
+          type: "object",
+          properties: {
+            title: {
+              type: "string",
+            },
+            content: {
+              type: "string",
+            },
+            authorId: {
+              type: "string",
+            },
+          },
+        },
       },
     },
   });
@@ -102,7 +116,7 @@ if (config.environment !== ServerEnvironments.PRODUCTION) {
   app.use("/explorer", swaggerUiExpress.serve, swaggerUiExpress.setup(spec));
 }
 
-app.use(compression())
+app.use(compression());
 
 app.listen(PORT);
 console.info(`Started server on http://localhost:${PORT}`);

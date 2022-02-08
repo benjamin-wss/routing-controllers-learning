@@ -15,7 +15,7 @@ export class PostService {
   }
 
   async Create(input: IPostMutable): Promise<IPost> {
-    const newPost = this.PostRepository.create(input);
+    const newPost = this.PostRepository.create(input, true);
 
     return newPost;
   }
