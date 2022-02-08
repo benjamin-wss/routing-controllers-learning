@@ -3,6 +3,7 @@ import {
   RoutingControllersOptions,
   getMetadataArgsStorage,
 } from "routing-controllers";
+import "reflect-metadata";
 // import glob from "glob";
 import { Application as ExpressServer } from "express";
 import { routingControllersToSpec } from "routing-controllers-openapi";
@@ -64,6 +65,30 @@ if (config.environment !== ServerEnvironments.PRODUCTION) {
             timeZone: {
               type: "string",
               description: "Moment TZ time zone string.",
+            },
+          },
+        },
+        SystemUserMutable: {
+          type: "object",
+          properties: {
+            username: {
+              type: "string",
+              description: "Username.",
+            },
+            email: {
+              type: "string",
+              description: "User's email.",
+            },
+            password: {
+              type: "string",
+              description: "User's password.",
+              format: "password",
+            },
+            isAdmin: {
+              type: "boolean",
+            },
+            emailConfirmed: {
+              type: "boolean",
             },
           },
         },

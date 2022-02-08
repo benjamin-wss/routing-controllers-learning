@@ -1,9 +1,11 @@
+import "reflect-metadata";
+
 import { JsonController, Post, Body } from "routing-controllers";
 import { OpenAPI } from "routing-controllers-openapi";
 
 import * as Services from "../services";
 
-@JsonController("/api/date-time-conversion")
+@JsonController("/api/v1/date-time-conversion")
 export default class TimeCoversion {
   @OpenAPI({
     description: "Converts UTC strings to a time for a given time zone.",

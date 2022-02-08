@@ -1,3 +1,5 @@
+import "reflect-metadata";
+
 import {
   Get,
   HttpCode,
@@ -7,7 +9,6 @@ import {
 } from "routing-controllers";
 import { Response } from "express";
 import { OpenAPI, ResponseSchema } from "routing-controllers-openapi";
-import "reflect-metadata";
 import { IsString } from "class-validator";
 
 import * as Dto from "../dto";
