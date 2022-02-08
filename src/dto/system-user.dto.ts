@@ -1,12 +1,6 @@
 import { IsBoolean, IsEmail, IsString, isUUID } from "class-validator";
 
-export interface ISystemUserMutable {
-  username: string;
-  email: string;
-  password: string;
-  isAdmin: boolean;
-  emailConfirmed: boolean;
-}
+import { ISystemUserMutable, ISystemUser } from "./interfaces";
 
 export class SystemUserMutable implements ISystemUserMutable {
   @IsString()
@@ -20,7 +14,7 @@ export class SystemUserMutable implements ISystemUserMutable {
 
   @IsBoolean()
   isAdmin: boolean;
-  
+
   @IsBoolean()
   emailConfirmed: boolean;
 
@@ -37,11 +31,6 @@ export class SystemUserMutable implements ISystemUserMutable {
     this.password = password;
     this.username = username;
   }
-}
-
-export interface ISystemUser extends ISystemUserMutable {
-  id: string;
-  createdAt: Date;
 }
 
 export class SystemUser implements ISystemUser {

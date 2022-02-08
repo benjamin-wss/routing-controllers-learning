@@ -11,11 +11,21 @@ datasource db {
 }
 
 model User {
-  id             String       @id @default(uuid())
+  id             BigInt       @id @default(autoincrement())
   createdAt      DateTime     @default(now()) @map("created_at")
   username       String       @unique @db.VarChar(20)
   email          String       @unique
   password       String
   isAdmin        Boolean      @default(false)
   emailConfirmed Boolean      @default(false)
+  posts          Post[]
+}
+
+model Post {
+  id             String       @id @default(uuid())
+  title          String       @db.VarChar(255)
+  content        String       @db.Text
+  createdAt      DateTime     @default(now()) @map("created_at")
+  authorId       BigInt       @map("author_id")
+  author         User         @relation(fields: [authorId], references: [id])
 }

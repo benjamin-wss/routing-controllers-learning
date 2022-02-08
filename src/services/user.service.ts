@@ -1,21 +1,21 @@
 import "reflect-metadata";
 
-import { IUser } from "../repositories";
+import { IUserRepository } from "../repositories";
 import { ISystemUserMutable, ISystemUser } from "../dto";
 
 export interface IUserServiceInit {
-  userRepository: IUser;
+  userRepository: IUserRepository;
 }
 
 export interface IUserService {
-  UserRepository: IUser;
+  UserRepository: IUserRepository;
   Create(input: ISystemUserMutable): Promise<ISystemUser>;
 }
 
 export class UserService {
-  private _userRepository: IUser;
+  private _userRepository: IUserRepository;
 
-  private get UserRepository(): IUser {
+  private get UserRepository(): IUserRepository {
     return this._userRepository;
   }
 

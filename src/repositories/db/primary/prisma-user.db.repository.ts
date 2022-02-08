@@ -1,10 +1,8 @@
 import { PrismaClient } from "@prisma/client";
-import { SystemUser } from "dto";
+import { ISystemUserMutable, SystemUser } from "../../../dto";
+import { IUserRepository } from "./i-user-repository";
 
-import { ISystemUserMutable } from "../../../dto";
-import { IUser } from "./IUser";
-
-export class PrismaUserDbRepository implements IUser {
+export class PrismaUserDbRepository implements IUserRepository {
   async create(input: ISystemUserMutable): Promise<SystemUser> {
     const client = new PrismaClient();
     const newUser = await client.user.create({
@@ -14,7 +12,7 @@ export class PrismaUserDbRepository implements IUser {
     });
 
     return new SystemUser(
-      newUser.id,
+      String(newUser.id),
       newUser.createdAt,
       newUser.username,
       newUser.email,
