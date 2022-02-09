@@ -1,14 +1,16 @@
-import { PrismaClient } from "@prisma/client";
-
+import BaseClass from "./_prisma-db-base.repository";
 import { IPostMutable, IPost, Post, ISystemUser } from "../../../dto";
 import { IPostRepository } from "./i-post-repository";
 
-export class PrismaPostDbRepository implements IPostRepository {
-  async create(
+export class PrismaPostDbRepository
+  extends BaseClass
+  implements IPostRepository
+{
+  async Create(
     post: IPostMutable,
     includeAuthorData: boolean = false
   ): Promise<IPost> {
-    const client = new PrismaClient();
+    const client = new super.PrismaClient();
 
     let newPost = null;
 
@@ -60,11 +62,26 @@ export class PrismaPostDbRepository implements IPostRepository {
 
     return result;
   }
-  getByAUthorId(
+
+  async GetCountByAuthorId(authorId: string): Promise<number> {
+    try {
+      const result = await super.PrismaClient.post.count({
+        where: {
+          authorId: BigInt(authorId),
+        },
+      });
+
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  GetByAuthorId(
     pageIndex: Number,
     pageSize: Number,
     authorId: string,
-    includeeAuthorMetadata: boolean = false
+    includeAuthorMetadata: boolean = false
   ): Promise<IPost[]> {
     throw new Error("Method not implemented.");
   }

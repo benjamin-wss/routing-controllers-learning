@@ -1,10 +1,13 @@
-import { PrismaClient } from "@prisma/client";
+import BaseClass from "./_prisma-db-base.repository";
 import { ISystemUserMutable, SystemUser } from "../../../dto";
 import { IUserRepository } from "./i-user-repository";
 
-export class PrismaUserDbRepository implements IUserRepository {
+export class PrismaUserDbRepository
+  extends BaseClass
+  implements IUserRepository
+{
   async create(input: ISystemUserMutable): Promise<SystemUser> {
-    const client = new PrismaClient();
+    const client = super.PrismaClient;
     const newUser = await client.user.create({
       data: {
         ...input,
