@@ -1,6 +1,6 @@
 import "reflect-metadata";
 
-import { Body, JsonController, Post } from "routing-controllers";
+import { Body, Get, JsonController, Param, Post } from "routing-controllers";
 import { OpenAPI } from "routing-controllers-openapi";
 import * as Dto from "../dto";
 import * as Services from "../services";
@@ -21,7 +21,7 @@ export default class Users {
       },
     },
   })
-  @Post("/prisma")
+  @Post("")
   async Create(@Body({ required: true }) payload: Dto.SystemUserMutable) {
     const userRepo = new Repositories.PrismaUserDbRepository();
 
@@ -30,5 +30,17 @@ export default class Users {
     });
 
     return service.Create(payload);
+  }
+
+  @Get("/:id/posts/count")
+  async GetCountOfPosts(@Param("id") id: string) {
+    const postRepo = new Repositories.PrismaPostDbRepository();
+
+    const service = new Services.Post.PostService(postRepo);
+    const count = await service.GetCountOfPostsByAhutorId(id);
+
+    return {
+      count,
+    };
   }
 }

@@ -15,8 +15,14 @@ export class PostService {
   }
 
   async Create(input: IPostMutable): Promise<IPost> {
-    const newPost = this.PostRepository.create(input, true);
+    const newPost = this.PostRepository.Create(input, true);
 
     return newPost;
+  }
+
+  async GetCountOfPostsByAhutorId(authorId: string): Promise<number> {
+    const count = await this.PostRepository.GetCountByAuthorId(authorId);
+
+    return count;
   }
 }

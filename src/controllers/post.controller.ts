@@ -21,7 +21,7 @@ export default class Posts {
       },
     },
   })
-  @Post("/prisma")
+  @Post("")
   async Create(
     @Body({ required: true }) payload: Dto.PostMutable
   ): Promise<Dto.Post> {
