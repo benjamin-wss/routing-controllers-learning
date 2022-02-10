@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 class InternalPrismaInstance {
   private static _instance: InternalPrismaInstance;
-  private _prismaClient;
+  private _prismaClient: PrismaClient;
 
   private constructor() {
     this._prismaClient = new PrismaClient();

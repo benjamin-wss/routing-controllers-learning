@@ -24,7 +24,7 @@ export default class Posts {
   @Post("")
   async Create(
     @Body({ required: true }) payload: Dto.PostMutable
-  ): Promise<Dto.Post> {
+  ): Promise<Dto.PostDto> {
     const postRepo = new Repositories.PrismaPostDbRepository();
 
     const service = new Services.Post.PostService(postRepo);

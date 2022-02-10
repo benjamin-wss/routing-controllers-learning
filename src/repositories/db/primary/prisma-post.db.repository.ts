@@ -1,5 +1,10 @@
 import BaseClass from "./_prisma-db-base.repository";
-import { IPostMutable, IPost, Post, ISystemUser } from "../../../dto";
+import {
+  IPostMutable,
+  IPost,
+  PostDto as PostDto,
+  ISystemUser,
+} from "../../../dto";
 import { IPostRepository } from "./i-post-repository";
 
 export class PrismaPostDbRepository
@@ -10,7 +15,7 @@ export class PrismaPostDbRepository
     post: IPostMutable,
     includeAuthorData: boolean = false
   ): Promise<IPost> {
-    const client = new super.PrismaClient();
+    const client = super.PrismaClient;
 
     let newPost = null;
 
@@ -46,7 +51,7 @@ export class PrismaPostDbRepository
       });
     }
 
-    const result = new Post({
+    const result = new PostDto({
       authorId: String(newPost.authorId),
       content: newPost.content,
       title: newPost.title,
@@ -64,25 +69,89 @@ export class PrismaPostDbRepository
   }
 
   async GetCountByAuthorId(authorId: string): Promise<number> {
-    try {
-      const result = await super.PrismaClient.post.count({
+    const result = await super.PrismaClient.post.count({
+      where: {
+        authorId: BigInt(authorId),
+      },
+    });
+
+    return result;
+  }
+
+  async GetByAuthorId(
+    pageIndex: number,
+    pageSize: number,
+    authorId: string,
+    includeAuthorMetadata: boolean = false,
+    includeCredentials: boolean = false
+  ): Promise<IPost[]> {
+    if (!includeAuthorMetadata) {
+      const result = await super.PrismaClient.post.findMany({
+        orderBy: {
+          createdAt: "asc",
+        },
+        skip: pageSize * pageIndex,
+        take: pageSize,
         where: {
           authorId: BigInt(authorId),
         },
       });
 
-      return result;
-    } catch (error) {
-      throw error;
-    }
-  }
+      if (!Array.isArray(result)) {
+        return [];
+      }
 
-  GetByAuthorId(
-    pageIndex: Number,
-    pageSize: Number,
-    authorId: string,
-    includeAuthorMetadata: boolean = false
-  ): Promise<IPost[]> {
-    throw new Error("Method not implemented.");
+      return result.map((x) => {
+        const row: IPost = {
+          author: null,
+          authorId: String(x.authorId),
+          content: x.content,
+          createdAt: x.createdAt,
+          id: String(x.id),
+          title: x.title,
+        };
+
+        return row;
+      });
+    }
+
+    const result = await super.PrismaClient.post.findMany({
+      orderBy: {
+        createdAt: "asc",
+      },
+      skip: pageSize * pageIndex,
+      take: pageSize,
+      where: {
+        authorId: BigInt(authorId),
+      },
+      include: {
+        author: true,
+      },
+    });
+
+    return result.map((x) => {
+      const row: IPost = {
+        author: {
+          createdAt: x.author.createdAt,
+          email: x.author.email,
+          emailConfirmed: x.author.emailConfirmed,
+          id: String(x.author.id),
+          isAdmin: x.author.isAdmin,
+          password: x.author.password,
+          username: x.author.username,
+        },
+        authorId: String(x.authorId),
+        content: x.content,
+        createdAt: x.createdAt,
+        id: String(x.id),
+        title: x.title,
+      };
+
+      if (!includeCredentials) {
+        row.author.password = "********";
+      }
+
+      return row;
+    });
   }
 }

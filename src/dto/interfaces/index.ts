@@ -1,7 +1,7 @@
 export interface ISystemUserMutable {
   username: string;
   email: string;
-  password: string;
+  password: string | null;
   isAdmin: boolean;
   emailConfirmed: boolean;
 }

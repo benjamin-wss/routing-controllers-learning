@@ -22,7 +22,7 @@ export class PostMutable implements Interfaces.IPostMutable {
   }
 }
 
-export class Post implements Interfaces.IPost {
+export class PostDto implements Interfaces.IPost {
   @IsString()
   id: string;
 

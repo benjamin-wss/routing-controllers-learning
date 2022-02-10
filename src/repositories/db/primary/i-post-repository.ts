@@ -7,9 +7,10 @@ export interface IPostRepository {
   ): Promise<Dto.IPost>;
   GetCountByAuthorId(authorId: string): Promise<number>;
   GetByAuthorId(
-    pageIndex: Number,
-    pageSize: Number,
+    pageIndex: number,
+    pageSize: number,
     authorId: string,
-    includeAuthorMetadata: boolean
+    includeAuthorMetadata: boolean,
+    includeCredentials: boolean
   ): Promise<Dto.IPost[]>;
 }
